@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikas Guduri - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Variables */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+            --accent-color: #3b82f6;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            margin: 0 15px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            font-size: 1.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background-color: #f1f5f9;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-icon {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            height: 200px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .project-content p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-badge {
+            background-color: #e0f2fe;
+            color: var(--accent-color);
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        .highlights {
+            margin-top: 15px;
+        }
+
+        .highlights h4 {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .highlights ul {
+            list-style-type: none;
+        }
+
+        .highlights li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Certifications Section */
+        .certifications {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certification-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-img {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .certification-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .certification-content {
+            padding: 20px;
+        }
+
+        .certification-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .experience-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-card {
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .experience-header h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .experience-header .date {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .experience-card h4 {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .experience-card p {
+            margin-bottom: 20px;
+        }
+
+        /* Achievements Section */
+        .achievements {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+
+        .achievements-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .achievement-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .achievement-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .achievement-header h3 {
+            color: var(--dark-color);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .achievement-header h3 i {
+            color: var(--primary-color);
+        }
+
+        .achievement-header .date {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .achievement-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Resume Section */
+        .resume {
+            padding: 100px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .resume-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 20px;
+        }
+
+        .resume-download:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .resume-download i {
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--gray-color);
+            margin-bottom: 0;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .project-card,
+            .certification-card {
+                width: 100%;
+            }
+
+            .experience-header,
+            .achievement-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero-img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .certifications-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Vikas<span>Guduri</span></a>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <img src="WhatsApp Image 2025-04-23 at 13.30.50_496dcbbd.jpg" alt="Vikas Guduri" class="hero-img">
+                <h1>Venkateswarao Vikas Guduri</h1>
+                <p>Computer Science Engineering Student at LPU | AI & ML Enthusiast</p>
+                <div class="social-icons">
+                    <a href="mailto:Vikasguduri1882@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="http://www.linkedin.com/in/vikas-guduri" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/VikasCoder14" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Courses</h2>
+            </div>
+            <div class="certifications-container">
+                <div class="certification-card">
+                    <div class="certification-img">
+                        <img src="pythonbylpu.png" alt="Python Data Mastery">
+                    </div>
+                    <div class="certification-content">
+                        <h3>Python Data Mastery</h3>
+                        <p>by LPU</p>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-img">
+                        <img src="supml.png" alt="Supervised ML Regression and Classification">
+                    </div>
+                    <div class="certification-content">
+                        <h3>Supervised ML: Regression and Classification</h3>
+                        <p>by DeepLearning.ai</p>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-img">
+                        <img src="genai.png" alt="Generative AI with LLM">
+                    </div>
+                    <div class="certification-content">
+                        <h3>Generative AI with LLM</h3>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-img">
+                        <img src="prompteng.png" alt="Prompt Engineering for ChatGPT">
+                    </div>
+                    <div class="certification-content">
+                        <h3>Prompt Engineering for ChatGPT</h3>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-img">
+                        <img src="dataanalysis.png" alt="ChatGPT Advanced Data Analysis">
+                    </div>
+                    <div class="certification-content">
+                        <h3>ChatGPT Advanced Data Analysis</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experience</h2>
+            </div>
+            <div class="experience-container">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>🎬 Rev Captioner</h3>
+                        <span class="date">October 2022 - May 2023</span>
+                    </div>
+                    <h4>Freelancer</h4>
+                    <p>Worked as a freelance captioner with Rev, specializing in accurately transcribing and captioning multimedia content including TV shows, films, documentaries, and commercials for accessibility.</p>
+                    <div class="highlights">
+                        <h4>Key Responsibilities:</h4>
+                        <ul>
+                            <li>Transcribed dialogue, background sounds, and on-screen text for a variety of media formats with a strong focus on accuracy and context</li>
+                            <li>Created time-synced captions for the hearing-impaired audience, following strict formatting and quality standards</li>
+                            <li>Maintained fast turnaround times while ensuring high-quality output and grammatical precision</li>
+                            <li>Worked independently to meet deadlines and adapted to a wide range of accents, speech patterns, and audio qualities</li>
+                            <li>Enhanced viewer experience by preserving tone, emotion, and context in every piece of content</li>
+                        </ul>
+                    </div>
+                    <div class="highlights">
+                        <h4>Tools Used:</h4>
+                        <ul>
+                            <li>Rev Captioning Software</li>
+                            <li>Grammarly</li>
+                            <li>Google Docs</li>
+                        </ul>
+                    </div>
+                    <div class="highlights">
+                        <h4>Highlights:</h4>
+                        <ul>
+                            <li>Captioned over 100 hours of multimedia content across genres</li>
+                            <li>Contributed to accessibility and inclusivity in digital media</li>
+                            <li>Recognized for consistent quality and minimal revision rate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Achievements</h2>
+            </div>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <div class="achievement-header">
+                        <h3><i class="fas fa-bullseye"></i> Head of Event Management</h3>
+                        <span class="date">September 2024 - Present</span>
+                    </div>
+                    <h4>United Nations Youth Community (UNYC)</h4>
+                    <p>Currently leading the end-to-end planning, execution, and post-event analysis for all flagship and internal events hosted by UNYC.</p>
+                    <div class="highlights">
+                        <h4>Key Contributions:</h4>
+                        <ul>
+                            <li>Designed and managed high-impact events including Model UN simulations, awareness campaigns, and social outreach initiatives</li>
+                            <li>Coordinated cross-functional teams to ensure smooth operations, logistics, and delegate experience</li>
+                            <li>Oversaw budgeting, resource allocation, vendor coordination, and volunteer mobilization</li>
+                            <li>Increased event attendance by 30% through strategic promotion and structured planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-header">
+                        <h3><i class="fas fa-bullhorn"></i> Director of Public Relations & Outreach</h3>
+                        <span class="date">July 2023 - January 2024</span>
+                    </div>
+                    <h4>United Nations Youth Community (UNYC)</h4>
+                    <p>Served as the face and voice of the organization, handling external communication, stakeholder engagement, and community partnerships.</p>
+                    <div class="highlights">
+                        <h4>Key Contributions:</h4>
+                        <ul>
+                            <li>Built and nurtured relationships with over 20+ educational institutions and NGOs for collaborative youth initiatives</li>
+                            <li>Managed UNYC's public image through strategic content creation, press releases, and social media engagement</li>
+                            <li>Spearheaded outreach campaigns that expanded the community's reach to over 5,000 active participants</li>
+                            <li>Played a pivotal role in expanding UNYC's national footprint and influence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-header">
+                        <h3><i class="fas fa-chart-line"></i> Head of Marketing</h3>
+                        <span class="date">July 2023 - September 2023</span>
+                    </div>
+                    <h4>United Nations Youth Community (UNYC)</h4>
+                    <p>Led the marketing division during a critical growth phase, developing creative strategies to boost brand recognition and event participation.</p>
+                    <div class="highlights">
+                        <h4>Key Contributions:</h4>
+                        <ul>
+                            <li>Created targeted digital campaigns using Instagram, LinkedIn, and email marketing to promote key events</li>
+                            <li>Increased social media engagement by 40% within three months through analytics-driven strategies</li>
+                            <li>Directed a team of creatives to produce high-quality promotional content including posters, reels, and infographics</li>
+                            <li>Conceptualized and launched the "Youth for Change" campaign that gained significant traction in student communities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resume</h2>
+            </div>
+            <p>Download my complete resume to learn more about my education, experience, and qualifications.</p>
+            <a href="https://drive.google.com/file/d/1f8xeo_UzFeSlAd9iMCZe0pLVBlx7OkaW/view?usp=drive_link" target="_blank" class="resume-download">
+                <i class="fas fa-file-download"></i>
+                Download Resume (PDF)
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Feel free to reach out if you have any questions, project ideas, or just want to connect!</p>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:Vikasguduri1882@gmail.com">Vikasguduri1882@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p><a href="http://www.linkedin.com/in/vikas-guduri" target="_blank">linkedin.com/in/vikas-guduri</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/VikasCoder14" target="_blank">github.com/VikasCoder14</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Vikas Guduri</h3>
+                    <p>Computer Science Engineering student passionate about AI, ML, and data-driven innovation.</p>
+                    <div class="footer-social">
+                        <a href="mailto:Vikasguduri1882@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="http://www.linkedin.com/in/vikas-guduri" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/VikasCoder14" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#achievements">Achievements</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Vikas Guduri. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission (placeholder)
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! This is a demo form - in a real website, this would send a message.');
+                contactForm.reset();
+            });
+        }
+
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm <strong>Venkateswarao Vikas Guduri</strong>, a Computer Science Engineering student at LPU with a passion for Artificial Intelligence, Machine Learning, and data-driven innovation. I specialize in building smart, scalable solutions using Python, NLP, and dimensionality reduction techniques.</p>
+                    <p>With hands-on experience in real-world projects and a strong academic foundation, I strive to merge technology with meaningful impact. I'm also a fitness enthusiast and creative thinker, always aiming to push boundaries—both mentally and physically.</p>
+                    <p>Let's create, innovate, and grow together.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Technologies</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">
+                            <img src="python.png" alt="Python" class="skill-icon">
+                            Python (Advanced)
+                        </span>
+                        <span class="skill-item">
+                            <img src="cpp.png" alt="C++" class="skill-icon">
+                            C++
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> ML/DL Frameworks</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">
+                            <img src="pytorch.png" alt="PyTorch" class="skill-icon">
+                            PyTorch
+                        </span>
+                        <span class="skill-item">
+                            <img src="./tensorflow.png" alt="TensorFlow" class="skill-icon">
+                            TensorFlow
+                        </span>
+                        <span class="skill-item">
+                            <img src="sklearn.png" alt="scikit-learn" class="skill-icon">
+                            scikit-learn
+                        </span>
+                        <span class="skill-item">
+                            <img src="huggongface.png" alt="Hugging Face" class="skill-icon">
+                            Hugging Face
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-eye"></i> NLP/CV</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">
+                            <img src="opencv.png" alt="OpenCV" class="skill-icon">
+                            OpenCV
+                        </span>
+                        <span class="skill-item">
+                            <img src="transformer.png" alt="Transformers" class="skill-icon">
+                            Transformers
+                        </span>
+                        <span class="skill-item">
+                            <img src="yolo.png" alt="YOLO" class="skill-icon">
+                            YOLO
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-bar"></i> Data Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">
+                            <img src="pandas.png" alt="Pandas" class="skill-icon">
+                            Pandas
+                        </span>
+                        <span class="skill-item">
+                            <img src="numpy.png" alt="NumPy" class="skill-icon">
+                            NumPy
+                        </span>
+                        <span class="skill-item">
+                            <img src="matplotlib.png" alt="Matplotlib" class="skill-icon">
+                            Matplotlib
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> Cloud</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">
+                            <img src="colab.png" alt="Google Colab" class="skill-icon">
+                            Google Colab
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>🧠 Vision-Based Early Landslide Detection</h3>
+                        <p>Developed a deep learning model for early landslide detection using multispectral satellite .h5 imagery. Focused on real-time image classification and accuracy evaluation using true labels.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">TensorFlow/Keras</span>
+                            <span class="tech-badge">HDF5</span>
+                            <span class="tech-badge">OpenCV</span>
+                            <span class="tech-badge">NumPy</span>
+                            <span class="tech-badge">Matplotlib</span>
+                        </div>
+                        <div class="highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Processed over 800 multispectral images</li>
+                                <li>Implemented CNN-based architecture for accurate prediction</li>
+                                <li>Preprocessing techniques included normalization and band filtering</li>
+                                <li>Trained on real satellite data to simulate real-world scenarios</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>📉 Dimensionality Reduction for Visualization</h3>
+                        <p>Applied PCA to high-dimensional datasets for better visualization and understanding. Compared performance of models with and without dimensionality reduction.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">PCA</span>
+                            <span class="tech-badge">Matplotlib</span>
+                            <span class="tech-badge">Seaborn</span>
+                        </div>
+                        <div class="highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Reduced dimensions from hundreds of features to 2/3 principal components</li>
+                                <li>Visualized clusters and patterns post-PCA transformation</li>
+                                <li>Demonstrated impact on model performance and interpretability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>🧾 News Classification Using ML and NLP</h3>
+                        <p>Built and compared multiple models (Logistic Regression, Naive Bayes, and Neural Networks) to classify news articles into categories.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">NLTK</span>
+                            <span class="tech-badge">Pandas</span>
+                        </div>
+                        <div class="highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Preprocessed large text datasets using tokenization and TF-IDF</li>
+                                <li>Achieved high classification accuracy using ensemble techniques</li>
+                                <li>Explored BERT for performance boosting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>🫁 Lung Cancer Prediction Using Random Forest + GUI</h3>
+                        <p>Built a user-friendly GUI application to predict lung cancer risk based on medical features using Random Forest.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Tkinter</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                            <span class="tech-badge">Pandas</span>
+                        </div>
+                        <div class="highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Developed an interactive GUI for non-tech users</li>
+                                <li>Achieved high precision in risk prediction</li>
+                                <li>Conducted research for a term paper combining ML + GUI development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-rss"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>📰 Newspaper Recommendation System</h3>
+                        <p>Built a content-based recommendation engine to suggest personalized newspaper articles based on user preferences.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">TF-IDF</span>
+                            <span class="tech-badge">Scikit-learn</span>
+                        </div>
+                        <div class="highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Used cosine similarity for recommendation logic</li>
+                                <li>Efficient retrieval from large datasets</li>
+                                <li>Delivered relevant article suggestions with minimal latency</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
